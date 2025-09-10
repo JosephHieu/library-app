@@ -28,3 +28,5 @@ class BookModel {
     this.img = img;
   }
 }
+
+export default BookModel;
