@@ -4,6 +4,7 @@ import { SpinnerLoading } from "../Utils/SpinnerLoading";
 import { StarsReview } from "../Utils/StarsReview";
 import { CheckoutAndReviewBox } from "./CheckoutAndReviewBox";
 import ReviewModel from "../../models/ReviewModel";
+import { LatestReview } from "./LatestReview";
 
 export const BookCheckoutPage = () => {
   const [book, setBook] = useState<BookModel>();
@@ -11,7 +12,7 @@ export const BookCheckoutPage = () => {
   const [httpError, setHttpError] = useState(null);
 
   // Review State
-  const [review, setReviews] = useState<ReviewModel[]>([]);
+  const [reviews, setReviews] = useState<ReviewModel[]>([]);
   const [totalStars, setTotalStars] = useState(0);
   const [isLoadingReview, setIsLoadingReview] = useState(true);
 
@@ -52,7 +53,7 @@ export const BookCheckoutPage = () => {
 
   useEffect(() => {
     const fetchBookReviews = async () => {
-      const reviewUrl: string = `http://localhost:8080/api/reviews/search/findBookId?bookId=${bookId}`;
+      const reviewUrl: string = `http://localhost:8080/api/reviews/search/findByBookId?bookId=${bookId}`;
 
       const responseReviews = await fetch(reviewUrl);
 
@@ -134,12 +135,13 @@ export const BookCheckoutPage = () => {
               <h2>{book?.title}</h2>
               <h5 className="text-primary">{book?.author}</h5>
               <p className="lead">{book?.description}</p>
-              <StarsReview rating={4.5} size={32} />
+              <StarsReview rating={totalStars} size={32} />
             </div>
           </div>
           <CheckoutAndReviewBox book={book} mobile={false} />
         </div>
         <hr />
+        <LatestReview reviews={reviews} bookId={book?.id} mobile={false} />
       </div>
 
       {/* Mobile */}
@@ -162,11 +164,12 @@ export const BookCheckoutPage = () => {
             <h2>{book?.title}</h2>
             <h5 className="text-primary">{book?.author}</h5>
             <p className="lead">{book?.description}</p>
-            <StarsReview rating={4} size={32} />
+            <StarsReview rating={totalStars} size={32} />
           </div>
         </div>
         <CheckoutAndReviewBox book={book} mobile={true} />
         <hr />
+        <LatestReview reviews={reviews} bookId={book?.id} mobile={true} />
       </div>
     </div>
   );
