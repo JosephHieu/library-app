@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ReviewModel from "../../models/ReviewModel";
 import { Review } from "../Utils/Review";
 
-export const LatestReview: React.FC<{
+export const LatestReviews: React.FC<{
   reviews: ReviewModel[];
   bookId: number | undefined;
   mobile: boolean;
@@ -16,14 +16,14 @@ export const LatestReview: React.FC<{
         {props.reviews.length > 0 ? (
           <>
             {props.reviews.slice(0, 3).map((eachReview) => (
-              <Review review={eachReview} key={eachReview.id} />
+              <Review review={eachReview} key={eachReview.id}></Review>
             ))}
 
             <div className="m-3">
               <Link
                 type="button"
-                className="btn main-color btn-md fw-bold"
-                to="#"
+                className="btn main-color btn-md text-white"
+                to={`/reviewlist/${props.bookId}`}
               >
                 Reach all reviews.
               </Link>
