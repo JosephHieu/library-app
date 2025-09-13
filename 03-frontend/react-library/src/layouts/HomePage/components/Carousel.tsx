@@ -1,6 +1,6 @@
 import { ReturnBook } from "./ReturnBook";
 import { useEffect, useState } from "react";
-import BookModel from "./../../../models/BookModel";
+import BookModel from "../../../models/BookModel";
 import { SpinnerLoading } from "../../Utils/SpinnerLoading";
 import { Link } from "react-router-dom";
 
@@ -43,7 +43,6 @@ export const Carousel = () => {
       setBooks(loadedBooks);
       setIsLoading(false);
     };
-
     fetchBooks().catch((error: any) => {
       setIsLoading(false);
       setHttpError(error.message);
@@ -51,11 +50,7 @@ export const Carousel = () => {
   }, []);
 
   if (isLoading) {
-    return (
-      <div className="container m-5">
-        <SpinnerLoading />
-      </div>
-    );
+    return <SpinnerLoading />;
   }
 
   if (httpError) {
@@ -73,7 +68,8 @@ export const Carousel = () => {
       </div>
       <div
         id="carouselExampleControls"
-        className="carousel carousel-dark slide mt-5 d-none d-lg-block"
+        className="carousel carousel-dark slide mt-5 
+                d-none d-lg-block"
         data-bs-interval="false"
       >
         {/* Desktop */}
@@ -85,7 +81,6 @@ export const Carousel = () => {
               ))}
             </div>
           </div>
-
           <div className="carousel-item">
             <div className="row d-flex justify-content-center align-items-center">
               {books.slice(3, 6).map((book) => (
@@ -93,7 +88,6 @@ export const Carousel = () => {
               ))}
             </div>
           </div>
-
           <div className="carousel-item">
             <div className="row d-flex justify-content-center align-items-center">
               {books.slice(6, 9).map((book) => (
@@ -102,7 +96,6 @@ export const Carousel = () => {
             </div>
           </div>
         </div>
-
         <button
           className="carousel-control-prev"
           type="button"
@@ -115,7 +108,6 @@ export const Carousel = () => {
           ></span>
           <span className="visually-hidden">Previous</span>
         </button>
-
         <button
           className="carousel-control-next"
           type="button"
@@ -136,13 +128,8 @@ export const Carousel = () => {
           <ReturnBook book={books[7]} key={books[7].id} />
         </div>
       </div>
-
       <div className="homepage-carousel-title mt-3">
-        <Link
-          href="#"
-          className="btn btn-outline-secondary btn-lg"
-          to="/search"
-        >
+        <Link className="btn btn-outline-secondary btn-lg" to="/search">
           View More
         </Link>
       </div>
