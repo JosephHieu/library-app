@@ -1,6 +1,7 @@
 package com.josephhieu.springbootlibrary.config;
 
 import com.josephhieu.springbootlibrary.entity.Book;
+import com.josephhieu.springbootlibrary.entity.Message;
 import com.josephhieu.springbootlibrary.entity.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -13,6 +14,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
     private String theAllowedOrigins = "http://localhost:3000";
 
+    @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config,
                                                      CorsRegistry cors) {
         HttpMethod[] theUnsupportedActions = {
@@ -23,9 +25,11 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         config.exposeIdsFor(Book.class);
         config.exposeIdsFor(Review.class);
+        config.exposeIdsFor(Message.class);
 
         disableHttpMethods(Book.class, config, theUnsupportedActions);
         disableHttpMethods(Review.class, config, theUnsupportedActions);
+        disableHttpMethods(Message.class, config, theUnsupportedActions);
 
         /* Configure CORS Mapping */
         cors.addMapping(config.getBasePath() + "/**")
@@ -35,7 +39,6 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     private void disableHttpMethods(Class theClass,
                                     RepositoryRestConfiguration config,
                                     HttpMethod[] theUnsupportedActions) {
-
         config.getExposureConfiguration()
                 .forDomainType(theClass)
                 .withItemExposure((metdata, httpMethods) ->
