@@ -18,7 +18,10 @@ export const SearchBook: React.FC<{ book: BookModel }> = (props) => {
               />
             )}
           </div>
-          <div className="d-lg-none d-flex justify-content-center align-items-center">
+          <div
+            className="d-lg-none d-flex justify-content-center 
+                        align-items-center"
+          >
             {props.book.img ? (
               <img src={props.book.img} width="123" height="196" alt="Book" />
             ) : (
@@ -40,8 +43,8 @@ export const SearchBook: React.FC<{ book: BookModel }> = (props) => {
         </div>
         <div className="col-md-4 d-flex justify-content-center align-items-center">
           <Link
+            className="btn btn-md main-color text-white"
             to={`/checkout/${props.book.id}`}
-            className="btn btn-md main-color fw-bold"
           >
             View Details
           </Link>

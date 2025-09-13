@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import BookModel from "../../models/BookModel";
+import { Pagination } from "../Utils/Pagination";
 import { SpinnerLoading } from "../Utils/SpinnerLoading";
 import { SearchBook } from "./components/SearchBook";
-import { Pagination } from "../Utils/Pagination";
 
 export const SearchBooksPage = () => {
   const [books, setBooks] = useState<BookModel[]>([]);
@@ -63,21 +63,15 @@ export const SearchBooksPage = () => {
       setBooks(loadedBooks);
       setIsLoading(false);
     };
-
     fetchBooks().catch((error: any) => {
       setIsLoading(false);
       setHttpError(error.message);
     });
-
     window.scrollTo(0, 0);
   }, [currentPage, searchUrl]);
 
   if (isLoading) {
-    return (
-      <div className="container m-5">
-        <SpinnerLoading />
-      </div>
-    );
+    return <SpinnerLoading />;
   }
 
   if (httpError) {
@@ -154,7 +148,7 @@ export const SearchBooksPage = () => {
                 <button
                   className="btn btn-secondary dropdown-toggle"
                   type="button"
-                  id="dropdownMennuButton1"
+                  id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
@@ -165,27 +159,27 @@ export const SearchBooksPage = () => {
                   aria-labelledby="dropdownMenuButton1"
                 >
                   <li onClick={() => categoryField("All")}>
-                    <a href="#" className="dropdown-item">
+                    <a className="dropdown-item" href="#">
                       All
                     </a>
                   </li>
                   <li onClick={() => categoryField("FE")}>
-                    <a href="#" className="dropdown-item">
+                    <a className="dropdown-item" href="#">
                       Front End
                     </a>
                   </li>
                   <li onClick={() => categoryField("BE")}>
-                    <a href="#" className="dropdown-item">
+                    <a className="dropdown-item" href="#">
                       Back End
                     </a>
                   </li>
                   <li onClick={() => categoryField("Data")}>
-                    <a href="#" className="dropdown-item">
+                    <a className="dropdown-item" href="#">
                       Data
                     </a>
                   </li>
                   <li onClick={() => categoryField("DevOps")}>
-                    <a href="#" className="dropdown-item">
+                    <a className="dropdown-item" href="#">
                       DevOps
                     </a>
                   </li>
@@ -210,9 +204,9 @@ export const SearchBooksPage = () => {
             <div className="m-5">
               <h3>Can't find what you are looking for?</h3>
               <a
-                href="#"
                 type="button"
                 className="btn main-color btn-md px-4 me-md-2 fw-bold text-white"
+                href="#"
               >
                 Library Services
               </a>
