@@ -12,6 +12,7 @@ import { MessagesPage } from "./layouts/MessagesPage/MessagesPage";
 import { ManageLibraryPage } from "./layouts/ManageLibraryPage/ManageLibraryPage";
 import { Auth0Provider, withAuthenticationRequired } from "@auth0/auth0-react";
 import { auth0Config } from "./lib/auth0Config";
+import { TokenDebugger } from "./layouts/TokenDebugger";
 import LoginPage from "./Auth/LoginPage";
 
 const Auth0ProviderWithHistory = ({
@@ -83,6 +84,11 @@ export const App = () => {
             <SecureRoute path="/shelf" component={ShelfPage} />
             <SecureRoute path="/messages" component={MessagesPage} />
             <SecureRoute path="/admin" component={ManageLibraryPage} />
+
+            {/* Route để debug JWT token */}
+            <Route path="/token">
+              <TokenDebugger />
+            </Route>
           </Switch>
         </div>
         <Footer />
