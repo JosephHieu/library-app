@@ -63,7 +63,6 @@ public class BookController {
         String userEmail = jwt.getClaim("email");
         bookService.renewLoan(userEmail, bookId);
     }
-
 }
 
 
