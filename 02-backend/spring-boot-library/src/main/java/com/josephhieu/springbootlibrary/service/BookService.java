@@ -29,6 +29,10 @@ public class BookService {
 
     private HistoryRepository historyRepository;
 
+    public BookService(BookRepository bookRepository, CheckoutRepository checkoutRepository) {
+        this(bookRepository, checkoutRepository, null);
+    }
+
     public BookService(BookRepository bookRepository, CheckoutRepository checkoutRepository,
                        HistoryRepository historyRepository) {
         this.bookRepository = bookRepository;
