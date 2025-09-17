@@ -3,8 +3,9 @@ import { StarsReview } from "./StarsReview";
 
 export const LeaveAReview: React.FC<{ submitReview: any }> = (props) => {
   const [starInput, setStarInput] = useState(0);
-  const [displayInput, setDisplayInput] = useState(false);
+  // Optional Description
   const [reviewDescription, setReviewDescription] = useState("");
+  const [displayInput, setDisplayInput] = useState(false);
 
   function starValue(value: number) {
     setStarInput(value);

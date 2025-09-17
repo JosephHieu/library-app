@@ -1,8 +1,9 @@
 package com.josephhieu.springbootlibrary.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
-import jakarta.persistence.*;
+
 import java.util.Date;
 
 @Entity
@@ -30,6 +31,7 @@ public class Review {
 
     @Column(name = "review_description")
     private String reviewDescription;
+//    private Optional<String> reviewDescription;
 
     public Long getId() {
         return id;
@@ -69,9 +71,11 @@ public class Review {
 
     public void setBookId(Long bookId) {
         this.bookId = bookId;
+        this.bookId = bookId;
     }
 
-    public String getReviewDescription() {
+
+        public String getReviewDescription() {
         return reviewDescription;
     }
 
