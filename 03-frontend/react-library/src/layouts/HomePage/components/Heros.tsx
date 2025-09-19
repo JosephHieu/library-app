@@ -21,7 +21,7 @@ export const Heros = () => {
               {isAuthenticated ? (
                 <Link
                   type="button"
-                  className="btn main-color btn-lg text-white"
+                  className="btn main-color btn-lg btn-outline-light"
                   to="search"
                 >
                   Explore top books{" "}
@@ -74,7 +74,7 @@ export const Heros = () => {
               {isAuthenticated ? (
                 <Link
                   type="button"
-                  className="btn main-color btn-lg text-white"
+                  className="btn main-color btn-lg btn-outline-light"
                   to="search"
                 >
                   Explore top books

@@ -20,7 +20,7 @@ export const LibraryServices = () => {
               <Link
                 to="/messages"
                 type="button"
-                className="btn main-color btn-lg px-4 me-md-2 fw-bold text-white"
+                className="btn main-color btn-lg px-4 me-md-2 fw-bold btn-outline-light"
               >
                 Library Services
               </Link>
