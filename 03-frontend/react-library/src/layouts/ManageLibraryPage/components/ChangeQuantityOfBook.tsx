@@ -132,13 +132,13 @@ export const ChangeQuantityOfBook: React.FC<{
           </div>
         </div>
         <button
-          className="m1 btn btn-md main-color text-white"
+          className="m1 btn btn-md main-color btn-outline-light"
           onClick={increaseQuantity}
         >
           Add Quantity
         </button>
         <button
-          className="m1 btn btn-md btn-warning"
+          className="m1 btn btn-md btn-warning btn-outline-light"
           onClick={decreaseQuantity}
         >
           Decrease Quantity
