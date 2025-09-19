@@ -80,7 +80,10 @@ export const Heros = () => {
                   Explore top books
                 </Link>
               ) : (
-                <Link className="btn main-color btn-lg text-white" to="/login">
+                <Link
+                  className="btn main-color btn-lg btn-outline-light"
+                  to="/login"
+                >
                   Sign up
                 </Link>
               )}
