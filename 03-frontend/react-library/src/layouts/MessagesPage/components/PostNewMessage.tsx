@@ -43,7 +43,7 @@ export const PostNewMessage = () => {
 
   return (
     <div className="card mt-3">
-      <div className="card-header">Ask question to Luv 2 Read Admin</div>
+      <div className="card-header">Ask question to Joseph Library Admin</div>
       <div className="card-body">
         <form method="POST">
           {displayWarning && (
