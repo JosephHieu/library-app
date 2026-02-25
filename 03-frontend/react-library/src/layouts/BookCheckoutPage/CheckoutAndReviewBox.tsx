@@ -15,6 +15,7 @@ export const CheckoutAndReviewBox: React.FC<{
   function buttonRender() {
     if (props.isAuthenticated) {
       if (!props.isCheckedOut && props.currentLoansCount < 5) {
+        // cần xử lý nút checkout này, thêm form điển trước khi bấm checkout
         return (
           <button
             onClick={() => props.checkoutBook()}
