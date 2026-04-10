@@ -8,8 +8,7 @@ A full-stack **Library Management System** built with **Spring Boot** and **Reac
 
 ---
 
-
-## Tech Stack
+## 🛠 Tech Stack
 
 ### Frontend
 
@@ -30,7 +29,6 @@ A full-stack **Library Management System** built with **Spring Boot** and **Reac
 * Auth0 (Authentication)
 * Stripe (Payment)
 * RESTful API
-* Microservices-ready structure
 
 ---
 
@@ -41,15 +39,14 @@ A full-stack **Library Management System** built with **Spring Boot** and **Reac
 * Browse books
 * Borrow books
 * View book details
-* Login / Register (Auth0)
+* Login / Register
 * Ask & answer questions
 
 ### Admin
 
 * Manage books (CRUD)
 * View user requests
-* Respond to user questions
-* Manage system data
+* Respond to questions
 
 ---
 
@@ -57,31 +54,64 @@ A full-stack **Library Management System** built with **Spring Boot** and **Reac
 
 ### Login
 
-<img src="doc/images/login.png" width="700"/>
+<img src="doc/images/login-with-Auth0-1.png" width="800"/>
 
 ---
 
 ### Admin - Manage Books
 
-<img src="doc/images/admin-crud.png" width="700"/>
+<img src="doc/images/admin-manage-book-crud-1.png" width="800"/>
 
 ---
 
-### Book Detail
+### Admin - Book Detail
 
-<img src="doc/images/admin-detail.png" width="700"/>
+<img src="doc/images/admin-manage-detail-book-1.png" width="800"/>
+<img src="doc/images/admin-manage-detail-book-2.png" width="800"/>
+
+---
+
+### Admin - Response
+
+<img src="doc/images/admin-response-1.png" width="800"/>
 
 ---
 
 ### User - Borrow Book
 
-<img src="doc/images/user-borrow.png" width="700"/>
+<img src="doc/images/user-borrow-book-1.png" width="800"/>
 
 ---
 
-### Q&A System
+### User - Not Login
 
-<img src="doc/images/user-question.png" width="700"/>
+<img src="doc/images/user-not-login-1.png" width="800"/>
+<img src="doc/images/user-not-login-2.png" width="800"/>
+
+---
+
+### User - Book Detail (Not Login)
+
+<img src="doc/images/user-not-login-detail-1.png" width="800"/>
+<img src="doc/images/user-not-login-detail-2.png" width="800"/>
+
+---
+
+### User - Ask Question
+
+<img src="doc/images/user-request-question-1.png" width="800"/>
+
+---
+
+### User - View Answer
+
+<img src="doc/images/user-response-answer-1.png" width="800"/>
+
+---
+
+### User - Shelf
+
+<img src="doc/images/user-shelf-1.png" width="800"/>
 
 ---
 
@@ -90,13 +120,13 @@ A full-stack **Library Management System** built with **Spring Boot** and **Reac
 ### Clone project
 
 ```bash
-git clone https://github.com/your-username/library-app.git
+git clone https://github.com/JosephHieu/library-app.git
 cd library-app
 ```
 
 ---
 
-### 2️Run Backend (Spring Boot)
+### Run Backend
 
 ```bash
 cd 02-backend/spring-boot-library
@@ -105,7 +135,7 @@ cd 02-backend/spring-boot-library
 
 ---
 
-### 3️Run Frontend (ReactJS)
+### Run Frontend
 
 ```bash
 cd 03-frontend
@@ -113,12 +143,12 @@ npm install
 npm start
 ```
 
-Frontend: http://localhost:3000
-Backend: http://localhost:8080
+👉 Frontend: http://localhost:3000
+👉 Backend: http://localhost:8080
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 library-app/
@@ -138,7 +168,6 @@ library-app/
 
 * Dockerize application
 * CI/CD pipeline
-* Role-based authorization
 * Improve UI/UX
 
 ---
@@ -150,6 +179,9 @@ library-app/
 ---
 
 ## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!
+
 
 Give it a ⭐ on GitHub!
 
